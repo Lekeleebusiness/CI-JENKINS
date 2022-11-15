@@ -17,13 +17,7 @@ pipeline {
         NEXUS_LOGIN = 'nexuslogin'
     }
 
-    stages {
-        stage('SCM Checkout') {
-            steps {
-               checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Lekeleebusiness/CI-JENKINS']]])
-            }
-        }
-        
+    stages { 
         stage('Build'){
             steps{
                sh 'mvn -s settings.xml -DskipTests install' 
