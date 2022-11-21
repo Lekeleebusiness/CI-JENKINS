@@ -1,5 +1,5 @@
 
-def COLOR_MAP = [
+defini COLOR_MAP = [
     'SUCCESS': 'good', 
     'FAILURE': 'danger',
 ]
