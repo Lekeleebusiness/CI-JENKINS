@@ -26,14 +26,14 @@ pipeline {
         appRegistry = '752145790990.dkr.ecr.us-east-1.amazonaws.com/vprofileappimg'
         vprofileRegistry = 'https://752145790990.dkr.ecr.us-east-1.amazonaws.com'
         cluster = "stagingcluster"
-        service = "	vproappstageservice"
+        service = "vproappstageservice"
         
     }
 
     stages { 
         stage('SCM Checkout'){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Lekeleebusiness/CI-JENKINS']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/cicd-jenkins']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Lekeleebusiness/CI-JENKINS']]])
             }
         }
         stage('Build'){
